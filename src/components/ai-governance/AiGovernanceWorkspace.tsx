@@ -52,7 +52,7 @@ export function AiGovernanceWorkspace({ events }: { events: AiGovernanceEvent[] 
   return (
     <div className="flex flex-col gap-4 xl:flex-row xl:items-stretch">
       <div className="min-w-0 flex-1">
-        <div className="flex min-h-[520px] flex-col rounded-2xl aegis-panel-flat p-4">
+        <div className="flex min-h-0 flex-col rounded-2xl aegis-panel-flat p-4 md:min-h-[420px] xl:min-h-[520px]">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-1 flex-wrap items-center gap-2">
               {query.trim() ? (
@@ -105,7 +105,7 @@ export function AiGovernanceWorkspace({ events }: { events: AiGovernanceEvent[] 
             </div>
           </div>
 
-          <div className="mt-3 min-w-0 flex-1 overflow-x-auto">
+          <div className="mt-3 min-w-0 flex-1 aegis-table-scroll">
             <table className={cn("w-full min-w-[960px] text-sm", rtl ? "text-right" : "text-left")}>
               <thead>
                 <tr className="border-b border-white/8 text-xs text-white/40">

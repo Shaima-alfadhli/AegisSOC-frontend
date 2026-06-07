@@ -189,14 +189,14 @@ export function AiCopilotPanel({
       ) : null}
 
       <div className="relative mt-3 flex-1 overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/10 p-4">
-        <div className="pointer-events-none absolute -end-4 top-1/2 -translate-y-1/2">
-          <AiCopilotBrain size="xl" className="opacity-90" />
+        <div className="pointer-events-none absolute -end-4 top-1/2 hidden -translate-y-1/2 sm:block">
+          <AiCopilotBrain size="xl" className="opacity-90 max-sm:opacity-40" />
         </div>
 
-        <p className="relative max-w-[58%] text-sm font-medium leading-snug text-white">
+        <p className="relative max-w-full text-sm font-medium leading-snug text-white sm:max-w-[85%] lg:max-w-[58%]">
           {summary}
         </p>
-        <p className="relative mt-2 max-w-[58%] text-xs leading-relaxed text-white/60">
+        <p className="relative mt-2 max-w-full text-xs leading-relaxed text-white/60 sm:max-w-[85%] lg:max-w-[58%]">
           <span className="font-medium text-white/45">{t("copilotPanel.interpretation")}: </span>
           {interpretation}
         </p>
@@ -216,13 +216,13 @@ export function AiCopilotPanel({
           ))}
         </ol>
 
-        <p className="relative mt-3 max-w-[58%] text-[11px] italic text-white/40">
+        <p className="relative mt-3 max-w-full text-[11px] italic text-white/40 sm:max-w-[85%] lg:max-w-[58%]">
           {analystNote}
         </p>
       </div>
 
       {needsAnalyst ? (
-        <div className="mt-3 grid grid-cols-2 gap-2">
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
           <button
             type="button"
             onClick={() => setAnalystApproved(true)}

@@ -160,7 +160,7 @@ export function ReportsWorkspace() {
               ))}
             </div>
 
-            <div className="mt-3 overflow-x-auto">
+            <div className="mt-3 aegis-table-scroll">
               <table className={cn("w-full min-w-[900px] text-sm", rtl ? "text-right" : "text-left")}>
                 <thead>
                   <tr className="border-b border-white/8 text-xs text-white/40">

@@ -108,13 +108,13 @@ export function AiAssistantWorkspace() {
       <div className="xl:col-span-2">
         <div className="rounded-2xl aegis-panel-flat p-4">
           <div className="text-xs font-medium text-white/45">{t("aiAssistantPage.startConversation")}</div>
-          <div className="mt-3 flex flex-col gap-1.5">
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1 xl:flex-col xl:overflow-visible xl:pb-0">
             {quickActions.map(({ icon: Icon, key }) => (
               <button
                 key={key}
                 type="button"
                 onClick={() => send(t(key))}
-                className="flex items-center gap-2 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-left text-xs text-white/70 hover:border-cyan-400/20 hover:bg-cyan-400/5 hover:text-white"
+                className="flex shrink-0 items-center gap-2 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-left text-xs text-white/70 hover:border-cyan-400/20 hover:bg-cyan-400/5 hover:text-white xl:w-full"
               >
                 <Icon className="size-3.5 shrink-0 text-cyan-300/80" />
                 {t(key)}
@@ -124,7 +124,7 @@ export function AiAssistantWorkspace() {
         </div>
       </div>
 
-      <div className="flex min-h-[520px] flex-col xl:col-span-7">
+      <div className="flex min-h-[360px] flex-col md:min-h-[480px] xl:col-span-7 xl:min-h-[520px]">
         <div className="flex flex-1 flex-col rounded-2xl aegis-panel p-4">
           <div className="mb-3 border-b border-white/8 pb-3">
             <div className="text-sm font-medium text-white">{t("aiAssistantPage.copilotTitle")}</div>
@@ -132,7 +132,7 @@ export function AiAssistantWorkspace() {
           </div>
 
           <div className="relative flex flex-1 flex-col gap-4 overflow-y-auto pe-1">
-            <div className="pointer-events-none absolute bottom-0 end-0 z-0">
+            <div className="pointer-events-none absolute bottom-0 end-0 z-0 hidden sm:block">
               <AiCopilotBrain size="xl" className="opacity-85" />
             </div>
             {messages.map((msg, i) => (

@@ -65,15 +65,15 @@ export function IncidentsTable({
         </Link>
       </div>
 
-      <div className="mt-3 min-w-0 flex-1 overflow-x-auto">
-        <table className={cn("w-full min-w-[720px] text-sm", rtl ? "text-right" : "text-left")}>
+      <div className="mt-3 min-w-0 flex-1 aegis-table-scroll">
+        <table className={cn("w-full min-w-[520px] text-sm md:min-w-[720px]", rtl ? "text-right" : "text-left")}>
           <thead>
             <tr className="border-b border-white/8 text-xs text-white/45">
               <th className="pb-3 pe-3 font-medium">{t("incidents.severity")}</th>
               <th className="pb-3 pe-3 font-medium">{t("dashboard.incident")}</th>
               <th className="pb-3 pe-3 font-medium">{t("common.user")}</th>
-              <th className="pb-3 pe-3 font-medium">{t("dashboard.sourceIp")}</th>
-              <th className="pb-3 pe-3 font-medium">{t("aiGov.time")}</th>
+              <th className="hidden pb-3 pe-3 font-medium md:table-cell">{t("dashboard.sourceIp")}</th>
+              <th className="hidden pb-3 pe-3 font-medium lg:table-cell">{t("aiGov.time")}</th>
               <th className="pb-3 pe-3 font-medium">{t("dashboard.aiVerdict")}</th>
               <th className={cn("pb-3 font-medium", rtl ? "text-left" : "text-right")}>
                 {t("common.action")}
@@ -100,7 +100,7 @@ export function IncidentsTable({
                   {i.title}
                 </td>
                 <td className="py-3.5 pe-3 text-white/70">{i.user}</td>
-                <td className="py-3.5 pe-3">
+                <td className="hidden py-3.5 pe-3 md:table-cell">
                   <span className="inline-flex items-center gap-2 text-white/75">
                     <span className="text-base leading-none">
                       {countryFlag[i.country] ?? "🌐"}
@@ -108,7 +108,7 @@ export function IncidentsTable({
                     <span className="tabular-nums">{i.source_ip}</span>
                   </span>
                 </td>
-                <td className="py-3.5 pe-3 whitespace-nowrap text-white/55">
+                <td className="hidden py-3.5 pe-3 whitespace-nowrap text-white/55 lg:table-cell">
                   {i.minutes_ago} {t("common.minAgo")}
                 </td>
                 <td className={cn("py-3.5 pe-3 text-xs font-medium", verdictPill(i.ai_verdict))}>

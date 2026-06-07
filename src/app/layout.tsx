@@ -45,7 +45,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-screen overflow-x-hidden"
+        className="min-h-screen overflow-x-clip"
         suppressHydrationWarning
       >
         <AppProviders initialLocale={locale}>{children}</AppProviders>

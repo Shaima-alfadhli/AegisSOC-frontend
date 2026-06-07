@@ -36,7 +36,7 @@ export function IncidentDetailPanel({ incident }: { incident: Incident }) {
   const inc = enrichIncident(incident);
 
   return (
-    <div className="flex h-full min-h-[520px] w-full flex-col rounded-2xl aegis-panel p-4 lg:max-w-[380px]">
+    <div className="flex h-full min-h-0 w-full flex-col rounded-2xl aegis-panel p-4 md:min-h-[420px] lg:max-w-[380px] xl:min-h-[520px]">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <h2 className="text-sm font-semibold leading-snug text-white">

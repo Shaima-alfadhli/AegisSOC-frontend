@@ -72,25 +72,25 @@ export function ThreatsTable({
               </option>
             ))}
           </select>
-          <select className="rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none">
+          <select className="hidden rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none sm:block">
             <option>{t("threatsPage.threatType")}</option>
           </select>
-          <select className="rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none">
+          <select className="hidden rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none md:block">
             <option>{t("threatsPage.country")}</option>
           </select>
-          <select className="rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none">
+          <select className="hidden rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none md:block">
             <option>{t("common.user")}</option>
           </select>
-          <select className="rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none">
+          <select className="hidden rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none lg:block">
             <option>{t("threatsPage.timeRange")}</option>
           </select>
-          <select className="rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none">
+          <select className="hidden rounded-lg border border-white/10 bg-black/20 px-2 py-1.5 text-xs text-white/70 outline-none lg:block">
             <option>{t("threatsPage.aiConfidence")}</option>
           </select>
         </div>
       </div>
 
-      <div className="mt-3 min-w-0 flex-1 overflow-x-auto">
+      <div className="mt-3 min-w-0 flex-1 aegis-table-scroll">
         <table className={cn("w-full min-w-[900px] text-sm", rtl ? "text-right" : "text-left")}>
           <thead>
             <tr className="border-b border-white/8 text-xs text-white/40">

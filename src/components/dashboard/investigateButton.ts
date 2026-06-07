@@ -11,4 +11,4 @@ export const freezePanelClass =
 export const isolatePanelClass =
   "flex w-full items-center justify-center gap-1.5 rounded-xl border border-amber-400/25 bg-amber-400/10 py-2 text-xs font-medium text-amber-100 hover:bg-amber-400/15";
 
-export const panelActionGridClass = "mt-4 grid grid-cols-2 gap-2";
+export const panelActionGridClass = "mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2";

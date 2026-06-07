@@ -39,11 +39,11 @@ export function AiThreatIntelligence({ compact = false }: { compact?: boolean })
       </div>
 
       <div className="relative mt-4 flex-1 overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-600/15 p-4">
-        <div className="pointer-events-none absolute -end-4 top-1/2 -translate-y-1/2">
+        <div className="pointer-events-none absolute -end-4 top-1/2 hidden -translate-y-1/2 sm:block">
           <AiCopilotBrain size="xl" className="opacity-90" />
         </div>
 
-        <p className="relative max-w-[58%] text-sm font-medium leading-snug text-white">
+        <p className="relative max-w-full text-sm font-medium leading-snug text-white sm:max-w-[85%] lg:max-w-[58%]">
           {t("threatsPage.lateralMovement")}
         </p>
         <p className="relative mt-2 text-sm text-red-300">

@@ -50,6 +50,8 @@ const en = {
     send: "Send",
     download: "Download",
     more: "More",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
   nav: {
     dashboard: "Dashboard",
@@ -491,6 +493,8 @@ const ar: DeepStringify<typeof en> = {
     send: "إرسال",
     download: "تحميل",
     more: "المزيد",
+    openMenu: "فتح القائمة",
+    closeMenu: "إغلاق القائمة",
   },
   nav: {
     dashboard: "لوحة التحكم",

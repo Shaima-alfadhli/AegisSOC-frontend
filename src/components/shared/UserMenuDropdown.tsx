@@ -15,7 +15,7 @@ import {
 import { cn } from "@/lib/utils/cn";
 import { useLocale, useT } from "@/components/providers/LocaleProvider";
 
-export function UserMenuDropdown() {
+export function UserMenuDropdown({ compact = false }: { compact?: boolean }) {
   const router = useRouter();
   const { t } = useT();
   const { rtl } = useLocale();
@@ -79,22 +79,31 @@ export function UserMenuDropdown() {
         aria-expanded={open}
         aria-haspopup="menu"
         className={cn(
-          "flex h-10 items-center gap-2 rounded-2xl border bg-white/5 px-3 transition-colors",
+          "flex h-9 items-center rounded-xl border bg-white/5 transition-colors sm:h-10 sm:rounded-2xl",
+          compact ? "size-9 justify-center px-0 sm:size-10" : "gap-2 px-3",
           open
             ? "border-cyan-400/30 ring-1 ring-cyan-400/20"
             : "border-white/10 hover:border-white/15 hover:bg-white/[0.07]"
         )}
       >
-        <div className={cn("leading-tight", rtl ? "text-right" : "text-left")}>
-          <div className="text-sm font-medium text-white">Shaima</div>
-          <div className="text-xs text-white/50">{t("nav.role")}</div>
-        </div>
-        <ChevronDown
-          className={cn(
-            "size-4 text-white/50 transition-transform duration-200",
-            open && "rotate-180 text-cyan-300/80"
-          )}
-        />
+        {compact ? (
+          <div className="grid size-8 place-items-center rounded-full bg-cyan-500/20 text-sm font-semibold text-cyan-100 ring-2 ring-white/10">
+            S
+          </div>
+        ) : (
+          <>
+            <div className={cn("leading-tight", rtl ? "text-right" : "text-left")}>
+              <div className="text-sm font-medium text-white">Shaima</div>
+              <div className="text-xs text-white/50">{t("nav.role")}</div>
+            </div>
+            <ChevronDown
+              className={cn(
+                "size-4 text-white/50 transition-transform duration-200",
+                open && "rotate-180 text-cyan-300/80"
+              )}
+            />
+          </>
+        )}
       </button>
 
       {open ? (

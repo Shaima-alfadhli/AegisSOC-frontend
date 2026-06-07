@@ -29,7 +29,7 @@ function UserOverview({ user }: { user: UserRecord }) {
       : t("usersPage.mfaDisabled");
 
   return (
-    <div className="flex h-full min-h-[520px] w-full flex-col rounded-2xl aegis-panel p-4 lg:max-w-[360px]">
+    <div className="flex h-full min-h-0 w-full flex-col rounded-2xl aegis-panel p-4 lg:max-w-[360px] md:min-h-[420px] xl:min-h-[520px]">
       <div className="text-sm font-medium text-white">{t("usersPage.userOverview")}</div>
       <div className="mt-4 flex flex-col items-center text-center">
         {isShaima ? (
@@ -194,7 +194,7 @@ export function UsersWorkspace() {
               </div>
             </div>
 
-            <div className="mt-3 overflow-x-auto">
+            <div className="mt-3 aegis-table-scroll">
               <table className={cn("w-full min-w-[800px] text-sm", rtl ? "text-right" : "text-left")}>
                 <thead>
                   <tr className="border-b border-white/8 text-xs text-white/40">
