@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { publicAsset } from "@/lib/publicAsset";
 import { cn } from "@/lib/utils/cn";
 
 export function AiCopilotBrain({
@@ -22,7 +23,7 @@ export function AiCopilotBrain({
       )}
     >
       <Image
-        src="/brand/ai-copilot-brain.png"
+        src={publicAsset("/brand/ai-copilot-brain.png")}
         alt="AI Security Copilot"
         width={dims}
         height={dims}

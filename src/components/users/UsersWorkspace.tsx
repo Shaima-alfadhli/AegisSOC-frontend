@@ -1,6 +1,7 @@
 "use client";
 
 import { demoUsers, type UserRecord } from "@/lib/data/usersData";
+import { publicAsset } from "@/lib/publicAsset";
 import { cn } from "@/lib/utils/cn";
 import {
   KeyRound,
@@ -33,7 +34,7 @@ function UserOverview({ user }: { user: UserRecord }) {
       <div className="mt-4 flex flex-col items-center text-center">
         {isShaima ? (
           <Image
-            src="/avatars/shaima.png"
+            src={publicAsset("/avatars/shaima.png")}
             alt={user.name}
             width={72}
             height={72}

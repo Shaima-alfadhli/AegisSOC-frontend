@@ -5,6 +5,7 @@ import { PageTopBar } from "@/components/layout/PageTopBar";
 import { useSearch } from "@/components/providers/SearchProvider";
 import { useT } from "@/components/providers/LocaleProvider";
 import { textMatches } from "@/lib/data/searchData";
+import { publicAsset } from "@/lib/publicAsset";
 
 const notificationKeys = [
   { id: "n1", key: "settingsPage.notifCritical", enabled: true },
@@ -56,7 +57,7 @@ export function SettingsPage() {
           <h2 className="text-sm font-medium text-white">{t("settingsPage.profile")}</h2>
           <div className="mt-4 flex items-center gap-4">
             <Image
-              src="/avatars/shaima.png"
+              src={publicAsset("/avatars/shaima.png")}
               alt="Shaima"
               width={64}
               height={64}

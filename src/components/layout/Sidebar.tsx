@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { publicAsset } from "@/lib/publicAsset";
 import { cn } from "@/lib/utils/cn";
 import { useT } from "@/components/providers/LocaleProvider";
 import {
@@ -36,7 +37,7 @@ export function Sidebar() {
       <div className="flex items-center gap-3 px-5 py-6">
         <div className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-xl">
           <Image
-            src="/brand/aegissoc-logo.png"
+            src={publicAsset("/brand/aegissoc-logo.png")}
             alt="AegisSOC"
             width={40}
             height={40}
@@ -78,7 +79,7 @@ export function Sidebar() {
       <div className="px-4 pb-6 pt-2">
         <div className="flex items-center gap-3 rounded-2xl aegis-panel-flat px-3 py-3">
           <Image
-            src="/avatars/shaima.png"
+            src={publicAsset("/avatars/shaima.png")}
             alt="Shaima"
             width={40}
             height={40}
