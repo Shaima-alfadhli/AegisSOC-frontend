@@ -17,6 +17,15 @@ import {
   Settings,
 } from "lucide-react";
 
+function normalizeNavPath(path: string): string {
+  if (!path || path === "/") return "/";
+  return path.replace(/\/+$/, "");
+}
+
+function isNavActive(pathname: string, href: string): boolean {
+  return normalizeNavPath(pathname) === normalizeNavPath(href);
+}
+
 export function Sidebar() {
   const pathname = usePathname();
   const { t } = useT();
@@ -50,25 +59,30 @@ export function Sidebar() {
 
       <nav className="flex flex-1 flex-col gap-1 px-3">
         {items.map(({ icon: Icon, label, href }) => {
-          const active =
-            href === "/" ? pathname === "/" : pathname === href;
+          const active = isNavActive(pathname, href);
 
           return (
             <Link
               key={href}
               href={href}
               className={cn(
-                "relative flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-start text-sm transition",
+                "relative flex w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-start text-sm transition-all duration-200",
                 active
-                  ? "border border-cyan-400/25 bg-cyan-400/15 ps-4 text-white shadow-[inset_0_0_20px_rgba(59,231,255,0.08)]"
-                  : "border border-transparent text-white/65 hover:bg-white/5 hover:text-white"
+                  ? "border-cyan-400/25 bg-cyan-400/15 ps-4 text-white shadow-[inset_0_0_20px_rgba(59,231,255,0.08)]"
+                  : "border-transparent text-white/65 hover:border-white/10 hover:bg-white/5 hover:text-white"
               )}
             >
-              {active ? (
-                <span className="absolute start-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-e-full bg-cyan-400" />
-              ) : null}
+              <span
+                className={cn(
+                  "absolute start-0 top-1/2 h-6 w-1 origin-center -translate-y-1/2 rounded-e-full bg-cyan-400 transition-all duration-200",
+                  active ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+                )}
+              />
               <Icon
-                className={cn("size-4 shrink-0", active ? "text-cyan-300" : "")}
+                className={cn(
+                  "size-4 shrink-0 transition-colors duration-200",
+                  active ? "text-cyan-300" : "text-inherit"
+                )}
               />
               <span className="truncate">{label}</span>
             </Link>
