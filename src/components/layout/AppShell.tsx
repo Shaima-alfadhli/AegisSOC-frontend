@@ -3,7 +3,6 @@
 import { Sidebar } from "@/components/layout/Sidebar";
 import { TopBarActions } from "@/components/layout/TopBarActions";
 import { GlobalSearch } from "@/components/shared/GlobalSearch";
-import { ConnectionBadge } from "@/components/shared/ConnectionBadge";
 import { useT } from "@/components/providers/LocaleProvider";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -24,7 +23,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         <div className="flex flex-1 flex-col gap-5 p-5 pb-8 lg:p-6 lg:pb-8">
-          <ConnectionBadge />
           {children}
         </div>
       </main>
